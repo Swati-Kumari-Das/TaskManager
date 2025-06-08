@@ -1,12 +1,15 @@
+![image](https://github.com/user-attachments/assets/ac859ee4-bbfc-47e8-9ae9-d641c50c06e2)
+
 # Task Manager App
 
 A simple full-stack task management application built with React (frontend) and Express (backend).  
-Users can add, view, update status, and delete tasks.
+Users can add, view, update status, and delete tasks. Now with basic offline support via localStorage caching .
 ## Features
 - Add, update, delete, and view tasks  
 - Task status tracking (To Do, In Progress, Done)  
 - REST API backend with Express  
-- React frontend powered by Vite  
+- React frontend powered by Vite
+- LocalStorage caching (offline fallback)
 - Dockerized for easy deployment and development
 ## Tech Stack
 
@@ -15,6 +18,8 @@ Users can add, view, update status, and delete tasks.
 | Frontend | React, Vite         |
 | Backend  | Node.js, Express    |
 | Containerization | Docker, Docker Compose |
+| Caching      | Browser LocalStorage   |
+
 ## Prerequisites
 - [Node.js and npm](https://nodejs.org/en/download/) (if running without Docker)  
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) (recommended for containerized setup)
@@ -39,11 +44,8 @@ Install dependencies:->npm install  -> Start the backend server:-> node index.js
 Navigate to the frontend folder: cd frontend -> Install dependencies: -> npm install -> Start the frontend development server:-> npm run dev
 Open your browser at http://localhost:5173.
 ## Usage
-1. Add new tasks using the form on the frontend.
-2. Tasks can be marked complete or deleted.
-3. The frontend communicates with the backend API to store and update tasks.
-4.Tasks are stored in-memory on the backend (data resets on server restart).
-## Notes
-1. The backend uses an in-memory array to store tasks; for production, integrate a database like MongoDB.
-2. Docker Compose helps run frontend and backend simultaneously in containers.
-3. Ports used: frontend (5173), backend (5000).
+1. Fill in the task form to add new tasks.
+2.Click Complete to update status or Delete to remove tasks.
+3. Click Refresh Tasks from Server to sync with backend.
+4. Tasks are also cached in browser localStorage for better performance and offline support.
+
