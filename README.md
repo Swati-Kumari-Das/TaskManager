@@ -25,75 +25,26 @@ Users can add, view, update status, and delete tasks.
 1. Install Docker Desktop and ensure Docker daemon is running.
 
 2. From the project root directory (where `docker-compose.yml` is located), run:
-
-   ```bash
    docker-compose up --build
 Access the application in your browser:
-
 Frontend: http://localhost:5173
-
 Backend API: http://localhost:5000
 
-To stop the application, press Ctrl + C in the terminal and run:
-
-bash
-Copy
-Edit
-docker-compose down
+To stop the application, press Ctrl + C in the terminal and run:  docker-compose down
 Running Locally without Docker
-Backend
-Navigate to the backend folder:
-
-bash
-Copy
-Edit
-cd backend
-Install dependencies:
-
-bash
-Copy
-Edit
-npm install
-Start the backend server:
-
-bash
-Copy
-Edit
-node index.js
-Frontend
-Navigate to the frontend folder:
-
-bash
-Copy
-Edit
-cd frontend
-Install dependencies:
-
-bash
-Copy
-Edit
-npm install
-Start the frontend development server:
-
-bash
-Copy
-Edit
-npm run dev
+## Backend:
+Navigate to the backend folder:cd backend
+Install dependencies:->npm install  -> Start the backend server:-> node index.js
+## Frontend
+Navigate to the frontend folder: cd frontend -> Install dependencies: -> npm install -> Start the frontend development server:-> npm run dev
 Open your browser at http://localhost:5173.
+## Usage
+1. Add new tasks using the form on the frontend.
+2. Tasks can be marked complete or deleted.
+3. The frontend communicates with the backend API to store and update tasks.
+4.Tasks are stored in-memory on the backend (data resets on server restart).
+## Project Structure
 
-Usage
-Add new tasks using the form on the frontend.
-
-Tasks can be marked complete or deleted.
-
-The frontend communicates with the backend API to store and update tasks.
-
-Tasks are stored in-memory on the backend (data resets on server restart).
-
-Project Structure
-bash
-Copy
-Edit
 /backend
   ├─ index.js        # Express backend server
   └─ package.json
@@ -102,9 +53,7 @@ Edit
   │   └─ TodoList.jsx  # Main React component
   └─ package.json
 /docker-compose.yml
-Notes
-The backend uses an in-memory array to store tasks; for production, integrate a database like MongoDB.
-
-Docker Compose helps run frontend and backend simultaneously in containers.
-
-Ports used: frontend (5173), backend (5000).
+## Notes
+1. The backend uses an in-memory array to store tasks; for production, integrate a database like MongoDB.
+2. Docker Compose helps run frontend and backend simultaneously in containers.
+3. Ports used: frontend (5173), backend (5000).
