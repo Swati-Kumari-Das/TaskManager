@@ -43,16 +43,6 @@ Open your browser at http://localhost:5173.
 2. Tasks can be marked complete or deleted.
 3. The frontend communicates with the backend API to store and update tasks.
 4.Tasks are stored in-memory on the backend (data resets on server restart).
-## Project Structure
-
-/backend
-  ├─ index.js        # Express backend server
-  └─ package.json
-/frontend
-  ├─ src
-  │   └─ TodoList.jsx  # Main React component
-  └─ package.json
-/docker-compose.yml
 ## Notes
 1. The backend uses an in-memory array to store tasks; for production, integrate a database like MongoDB.
 2. Docker Compose helps run frontend and backend simultaneously in containers.
